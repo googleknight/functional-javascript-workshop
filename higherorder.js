@@ -1,15 +1,22 @@
+let counter=0;
 function repeat(operation,num){
-    let counter;
-    for(counter=1;counter<num;counter++)
+    if(num!=0)
+    {
         operation();
-    return counter;
+        repeat(operation,--num);
+    }
+    else if(num==0)
+        return;
+    
 }
 
 function operation()
 {
+    counter++;
     console.log("Hello World");
 }
 
-
+//module.exports=repeat;
 //testcases
-console.log("Repeating function 4 times:",repeat(operation,4)===4);
+repeat(operation,4)
+console.log("Repeating function 4 times:",counter===4);
