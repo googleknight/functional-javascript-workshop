@@ -6,7 +6,7 @@ function checkUsersValid(goodUsers){
                 return goodUsers.some(
                     function checkgoodUsers(goodUser)
                     {
-                        return gooduser.id===submitteduser.id;
+                        return goodUser.id===submittedUser.id;
                     }
                 );
             }
@@ -29,3 +29,8 @@ let testUsers = [
 
 //Test Cases
 console.log("Some users are in good users list:",(checkUsersValid(goodUsers))(testUsers));
+testUsers = [
+    { id: 5},
+    { id: 3}
+];
+console.log("Some users are not in good users list:",(checkUsersValid(goodUsers))(testUsers));
